@@ -11,6 +11,16 @@ deltat = 4 #timestep
 m = 2 #mass
 fofxt = np.array([1, 1, 1]) #force
 
-vtonefourth = vt + ((deltat / 2) * (1 / m) * fofxt);
+vtonefourth = vt + ((deltat / 2) * (1 / m) * fofxt); #first Langevin integrator
 
 print ("Vt 1/4 is", vtonefourth)
+
+
+xt = 1 #initial position
+
+xthalf = xt + ((deltat / 2) * vtonefourth); #second Langevin integrator
+
+print ("Xt 1/2 is", xthalf)
+
+
+
