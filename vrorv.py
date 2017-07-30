@@ -40,3 +40,11 @@ print ("Vt 3.4 is", vtthreefourths)
 x1 = xthalf + (deltat / 2) * (vtthreefourths)
 
 print ("x1 is", x1)
+
+
+fofxt1 = 2
+
+v1 = vtthreefourths + ((deltat / 2) * (1 / m) * fofxt1) #fifth Langevin integrator
+
+print ("v1 is", v1)
+
