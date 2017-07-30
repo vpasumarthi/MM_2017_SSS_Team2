@@ -44,3 +44,8 @@ print ("first expression is", e)
 print ("second e2 is", e2)
 print ("z is", z)
 print ("final part is", math.sqrt(kB*T/m))
+
+
+x1 = xthalf + (deltat / 2) * (vtthreefourths)
+
+print ("x1 is", x1)
