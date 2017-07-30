@@ -39,13 +39,20 @@ zeta = 3
 T = 300 
 vtthreefourths = (e * vtonefourth) + (z * (math.sqrt(kB*T/m)) * zeta) #third Langevin integrator
 
-print ("Vt 3.4 is", vtthreefourths)
+print ("Vt 3/4 is", vtthreefourths)
 print ("first expression is", e)
 print ("second e2 is", e2)
 print ("z is", z)
 print ("final part is", math.sqrt(kB*T/m))
 
 
-x1 = xthalf + (deltat / 2) * (vtthreefourths)
+x1 = xthalf + (deltat / 2) * (vtthreefourths) #fourth Langevin integrator
 
 print ("x1 is", x1)
+
+
+fofxt1 = 2
+
+v1 = vtthreefourths + ((deltat / 2) * (1 / m) * fofxt1) #fifth Langevin integrator
+
+print ("v1 is", v1)
