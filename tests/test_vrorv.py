@@ -26,12 +26,8 @@ print ("Xt 1/2 is", xthalf)
 gammat = (gamma * deltat)
 gamma = -1 / (500 * deltat)
 e = math.log(gamma[base]) #base e
-e2 = math.log((-2*gamma)[base])
-x = math.sqrt((1-e2))
-kB = 1.38064852 ** (-23)
-zeta = np.random.randn()
 
-vtthreefourths = (e * vtonefourth) + (e2 * (math.sqrt(kB*T/m)) * zeta) #third Langevin integrator
+vtthreefourths = (e * vtonefourth) + 
 
 
 
