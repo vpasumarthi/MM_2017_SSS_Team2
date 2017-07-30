@@ -36,3 +36,7 @@ T = 300
 vtthreefourths = (e * vtonefourth) + (z * (math.sqrt(kB*T/m)) * zeta) #third Langevin integrator
 
 print ("Vt 3.4 is", vtthreefourths)
+
+x1 = xthalf + (deltat / 2) * (vtthreefourths)
+
+print ("x1 is", x1)
