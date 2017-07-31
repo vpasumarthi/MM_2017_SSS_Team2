@@ -22,16 +22,29 @@ xthalf = xt + ((deltat / 2) * vtonefourth); #second Langevin integrator
 
 print ("Xt 1/2 is", xthalf)
 
-
+gamma = (-1) / (500 * deltat)
 gammat = (gamma * deltat)
-gamma = -1 / (500 * deltat)
-e = math.log(gamma[base]) #base e
-e2 = math.log((-2*gamma)[base])
-x = math.sqrt((1-e2))
+e = math.exp(gammat) #base e
+y = (2 * gammat)
+e2 = math.exp(y)
+z = (1) - (e2)
+x = math.sqrt(z)
 kB = 1.38064852 ** (-23)
-zeta = np.random.randn()
+#zeta = np.random.randn()
+zeta = 3
+T = 300 
+vtthreefourths = (e * vtonefourth) + (z * (math.sqrt(kB*T/m)) * zeta) #third Langevin integrator
 
-vtthreefourths = (e * vtonefourth) + (e2 * (math.sqrt(kB*T/m)) * zeta) #third Langevin integrator
+print ("Vt 3.4 is", vtthreefourths)
+
+x1 = xthalf + (deltat / 2) * (vtthreefourths)
+
+print ("x1 is", x1)
 
 
+fofxt1 = 2
+
+v1 = vtthreefourths + ((deltat / 2) * (1 / m) * fofxt1) #fifth Langevin integrator
+
+print ("v1 is", v1)
 
