@@ -95,7 +95,7 @@ tail_correction = tail_correction(box_length)
 
 # Monte Carlo algorithm
 
-num_steps = 10000
+num_steps = 100000
 energy_array = np.zeros(num_steps)
 
 num_accept = 0
@@ -137,3 +137,7 @@ for i_step in range(num_steps):
             max_displacement *= 1.2
     total_energy = (total_pair_energy + tail_correction) / num_particles
     energy_array[i_step] = total_energy
+
+plt.figure()
+plt.plot(np.arange(num_steps), energy_array)
+plt.savefig('MCRun.png')
